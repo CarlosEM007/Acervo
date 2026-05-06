@@ -1,4 +1,6 @@
-﻿using Acervo.Infrastructure.Data;
+﻿using Acervo.Domain.Interfaces;
+using Acervo.Infrastructure.Data;
+using Acervo.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,8 @@ namespace Acervo.Infrastructure
                     configuration.GetConnectionString("Postgres"),
                     sql => sql.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)
                 ));
+
+            services.AddScoped<IBookRepository, BookRepository>();
 
             return services;
         }
