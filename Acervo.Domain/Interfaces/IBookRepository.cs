@@ -4,5 +4,6 @@ namespace Acervo.Domain.Interfaces
 {
     public interface IBookRepository: IRepository<Book>
     {
+        Task<List<Book>> GetAllBook();
     }
 }
