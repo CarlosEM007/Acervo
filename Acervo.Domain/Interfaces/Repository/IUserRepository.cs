@@ -1,6 +1,9 @@
-﻿namespace Acervo.Domain.Interfaces.Repository
+﻿using Acervo.Domain.Entities;
+
+namespace Acervo.Domain.Interfaces.Repository
 {
-    public class IUserRepository
+    public interface IUserRepository
     {
+        Task<User> ObterPorEmailAsync(string email);
     }
 }
