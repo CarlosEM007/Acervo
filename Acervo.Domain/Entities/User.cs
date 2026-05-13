@@ -1,4 +1,5 @@
-﻿using Acervo.Domain.Exceptions;
+﻿using Acervo.Domain.Enum;
+using Acervo.Domain.Exceptions;
 
 namespace Acervo.Domain.Entities
 {
@@ -13,6 +14,7 @@ namespace Acervo.Domain.Entities
         public Favorites Favorites { get; private set; }
         public Cart Cart { get; private set; }
         public Library Library { get; private set; }
+        public UserRole Role { get; private set; }
 
         protected User() { }
 
