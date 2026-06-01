@@ -2,7 +2,6 @@
 @layout LoginLayout
 @inject NavigationManager Navigation
 @rendermode InteractiveServer
-
 @using Acervo.Web.Components.Layout
 @using Acervo.Web.Components.Shared
 
@@ -10,10 +9,12 @@
 
 <div class="login-page">
 
+    <!-- Lado esquerdo: imagem -->
     <div class="login-cover">
         <div class="login-cover__overlay"></div>
     </div>
 
+    <!-- Lado direito: formulário -->
     <div class="login-panel">
 
         <header class="login-panel__header">
@@ -36,12 +37,25 @@
                           Width="100%"
                           @bind-Value="Senha" />
 
-                <AppButton OnClickCallback="Acessar"
-                           Type="button"
-                           Size="lg"
-                           FullWidth="true">
-                    Entrar
-                </AppButton>
+                <div class="login-panel__actions">
+                    <AppButton OnClickCallback="Acessar"
+                               Type="button"
+                               Size="lg"
+                               Color="#16a34a"
+                               Width="160px"
+                               Height="52px">
+                        Entrar
+                    </AppButton>
+
+                    <AppButton OnClickCallback="Registrar"
+                               Type="button"
+                               Size="lg"
+                               Color="#2563eb"
+                               Width="160px"
+                               Height="52px">
+                        Registrar-se
+                    </AppButton>
+                </div>
             </div>
         </main>
 

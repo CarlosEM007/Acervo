@@ -2,7 +2,7 @@
 
 <button id="@Id"
         type="@Type"
-        class="app-btn app-btn--@Variant app-btn--@Size @(FullWidth ? "app-btn--full" : "") @(Loading ? "app-btn--loading" : "")"
+        class="@ButtonClass"
         style="@ButtonStyle"
         disabled="@(Disabled || Loading)"
         @onclick="HandleClick">

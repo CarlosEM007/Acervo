@@ -11,5 +11,10 @@ namespace Acervo.Web.Components.Pages
         {
             Navigation.NavigateTo("/Home");
         }
+
+        private void Registrar(MouseEventArgs e)
+        {
+            Navigation.NavigateTo("/Registro");
+        }
     }
 }

@@ -1,25 +1,23 @@
-﻿/* ── Variáveis ──────────────────────────────────────────────────── */
+﻿/* ── Variáveis ───────────────────────────────────────────────────── */
 :root {
-    --input-radius: 8px;
-    --input-border: #d1d5db;
-    --input-border-focus: #6366f1;
-    --input-border-error: #ef4444;
-    --input-bg: #ffffff;
-    --input-bg-disabled: #f3f4f6;
-    --input-text: #111827;
-    --input-placeholder: #9ca3af;
-    --input-label: #374151;
-    --input-helper: #6b7280;
-    --input-error-text: #ef4444;
-    --input-shadow-focus: 0 0 0 3px rgba(99, 102, 241, 0.18);
-    --input-shadow-error: 0 0 0 3px rgba(239, 68, 68, 0.15);
-    --input-transition: border-color 0.18s ease, box-shadow 0.18s ease;
-    --input-height: 42px;
+    --input-height: 48px;
     --input-font-size: 0.9375rem;
-    --input-padding-x: 0.875rem;
+    --input-padding-x: 0.25rem;
+    --input-label: #6b7280;
+    --input-label-focus: #111827;
+    --input-text: #111827;
+    --input-placeholder: rgba(107, 114, 128, 0.45);
+    --input-line: #e5e7eb;
+    --input-line-focus: #111827;
+    --input-line-error: #ef4444;
+    --input-bg: transparent;
+    --input-bg-focus: #f7f7f8;
+    --input-helper: #9ca3af;
+    --input-error-text: #ef4444;
+    --input-transition: background-color 0.25s ease, border-color 0.2s ease;
 }
 
-/* ── Wrapper ────────────────────────────────────────────────────── */
+/* ── Wrapper ─────────────────────────────────────────────────────── */
 .input-wrapper {
     display: inline-flex;
     flex-direction: column;
@@ -27,16 +25,18 @@
     width: 100%;
 }
 
-/* ── Label ──────────────────────────────────────────────────────── */
+/* ── Label ───────────────────────────────────────────────────────── */
 .input-label {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--input-label);
-    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     user-select: none;
+    transition: color 0.2s ease;
 }
 
-/* ── Container do input ─────────────────────────────────────────── */
+/* ── Container ───────────────────────────────────────────────────── */
 .input-container {
     display: flex;
     align-items: center;
@@ -44,33 +44,32 @@
     height: var(--input-height);
     padding: 0 var(--input-padding-x);
     background: var(--input-bg);
-    border: 1.5px solid var(--input-border);
-    border-radius: var(--input-radius);
+    border: none;
+    border-bottom: 1.5px solid var(--input-line);
+    border-radius: 4px 4px 0 0;
     transition: var(--input-transition);
     box-sizing: border-box;
 }
 
     .input-container:focus-within {
-        border-color: var(--input-border-focus);
-        box-shadow: var(--input-shadow-focus);
-        outline: none;
+        background: var(--input-bg-focus);
+        border-bottom-color: var(--input-line-focus);
     }
 
-    .input-container.has-error {
-        border-color: var(--input-border-error);
-    }
+.input-wrapper:focus-within .input-label {
+    color: var(--input-label-focus);
+}
 
-        .input-container.has-error:focus-within {
-            box-shadow: var(--input-shadow-error);
-        }
+.input-container.has-error {
+    border-bottom-color: var(--input-line-error);
+}
 
-    .input-container.disabled {
-        background: var(--input-bg-disabled);
-        cursor: not-allowed;
-        opacity: 0.65;
-    }
+.input-container.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
-/* ── Campo input ────────────────────────────────────────────────── */
+/* ── Campo ───────────────────────────────────────────────────────── */
 .input-field {
     flex: 1;
     height: 100%;
@@ -86,13 +85,14 @@
 
     .input-field::placeholder {
         color: var(--input-placeholder);
+        opacity: 1;
     }
 
     .input-field:disabled {
         cursor: not-allowed;
     }
 
-/* ── Ícones ─────────────────────────────────────────────────────── */
+/* ── Ícones ──────────────────────────────────────────────────────── */
 .input-icon {
     display: flex;
     align-items: center;
@@ -102,10 +102,10 @@
     line-height: 1;
 }
 
-/* ── Textos auxiliares ──────────────────────────────────────────── */
+/* ── Textos auxiliares ───────────────────────────────────────────── */
 .input-helper,
 .input-error {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     line-height: 1.4;
     padding-left: 2px;
 }
