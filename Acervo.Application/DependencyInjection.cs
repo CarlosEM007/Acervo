@@ -16,6 +16,18 @@ namespace Acervo.Application
             services.AddScoped<AuthorService>();
             services.AddScoped<PublisherService>();
             services.AddScoped<CategoryService>();
+            services.AddScoped<CartService>();
+            services.AddScoped<CartItemService>();
+            services.AddScoped<FavoritesService>();
+            services.AddScoped<FavoritesItemService>();
+            services.AddScoped<LibraryService>();
+            services.AddScoped<LibraryItemService>();
+            services.AddScoped<SaleService>();
+            services.AddScoped<SaleItemService>();
+            services.AddScoped<SellerService>();
+            services.AddScoped<StockService>();
+            services.AddScoped<StockItemService>();
+            services.AddScoped<UserService>();
 
             return services;
         }
