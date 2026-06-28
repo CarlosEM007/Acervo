@@ -23,10 +23,6 @@ namespace Acervo.Web.Service
                 PasswordHash = password
             };
 
-#if DEBUG
-            return true;
-#endif 
-
             var response = await _httpClient.PostAsJsonAsync(AuthEndpoints.Login(), login);
 
             if(!response.IsSuccessStatusCode)

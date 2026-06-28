@@ -79,6 +79,10 @@
         <h2 class="home-section__title">Lançamentos</h2>
         <a class="home-section__link" href="/catalogo?ordem=lancamento">Ver todos →</a>
     </div>
+    @if (IsLoading)
+    {
+        <div class="catalogo-loading"><div class="catalogo-loading__spinner"></div></div>
+    }
     <div class="books-grid">
         @foreach (var book in NewReleases)
         {
