@@ -1,3 +1,4 @@
+using Acervo.Web.DTOs;
 using Acervo.Web.Service;
 using Microsoft.AspNetCore.Components;
 
@@ -51,7 +52,7 @@ namespace Acervo.Web.Components.Pages
                                     .GroupBy(s => s.BookId)
                                     .ToDictionary(g => g.Key, g => g.Min(s => s.Price));
 
-                BookVm ToVm(BookService.BookDto b) => new(
+                BookVm ToVm(BookDto b) => new(
                     b.Id,
                     b.Title,
                     authors.GetValueOrDefault(b.AuthorId, "—"),
